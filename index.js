@@ -177,9 +177,9 @@ app.post('/editStudentById', async (req, res) => {
 
 app.post('/editStudentByFname', async (req, res) => {
     try{
-        let student = await Student.findOne({fname: req.body.searchFname});
+        let student = await Student.findOne({fname: req.body.queryFname});
         if(student){
-            await Student.updateOne({fname: req.body.searchFname},
+            await Student.updateOne({fname: req.body.queryFname},
                 {
                     fname: req.body.fname,
                     lname: req.body.lname
